@@ -1,6 +1,7 @@
 const { nanoid } = require('nanoid');
 const books = require('./books');
 
+// Kriteria Pengujian API
 // Kriteria Penilaian 1
 const addbookHandler = (request, h) => {
   const {
