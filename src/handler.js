@@ -1,7 +1,7 @@
 const { nanoid } = require('nanoid');
 const books = require('./books');
 
-// KRITERIA 1
+// Kriteria Penilaian 1
 const addbookHandler = (request, h) => {
   const {
     name, year, author, summary, publisher, pageCount, readPage, reading,
@@ -15,7 +15,7 @@ const addbookHandler = (request, h) => {
   if (name === undefined) {
     const response = h.response({
       status: 'fail',
-      message: 'Gagal menambahkan buku. Mohon isi nama buku',
+      message: 'Gagal menambahkan buku. Mohon untuk mengisikan nama buku',
     });
     response.code(400);
     return response;
@@ -24,7 +24,7 @@ const addbookHandler = (request, h) => {
   if (readPage > pageCount) {
     const response = h.response({
       status: 'fail',
-      message: 'Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount',
+      message: 'Gagal menambahkan buku. readPage dilarang lebih besar dari pageCount',
     });
     response.code(400);
     return response;
