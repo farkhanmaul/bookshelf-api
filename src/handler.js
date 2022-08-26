@@ -65,7 +65,7 @@ const addbookHandler = (request, h) => {
   return response;
 };
 
-// KRITERIA 2 & QUERY
+// Kriteria 2 dan QUERY
 const getAllbooksHandler = (request, h) => {
   const { name, reading, finished } = request.query;
   let filteredBooks = books;
@@ -95,7 +95,7 @@ const getAllbooksHandler = (request, h) => {
   return response;
 };
 
-// KRITERIA 3
+// Kriteria 3
 const getbookByIdHandler = (request, h) => {
   const { id } = request.params;
 
@@ -118,7 +118,7 @@ const getbookByIdHandler = (request, h) => {
   return response;
 };
 
-// KRITERIA 4
+// Kriteria 4
 const editbookByIdHandler = (request, h) => {
   const { id } = request.params;
 
@@ -132,7 +132,7 @@ const editbookByIdHandler = (request, h) => {
   if (name === undefined) {
     const response = h.response({
       status: 'fail',
-      message: 'Gagal memperbarui buku. Mohon isi nama buku',
+      message: 'Gagal memperbarui buku. Mohon untuk mengisikan nama buku',
     });
     response.code(400);
     return response;
@@ -141,7 +141,7 @@ const editbookByIdHandler = (request, h) => {
   if (readPage > pageCount) {
     const response = h.response({
       status: 'fail',
-      message: 'Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount',
+      message: 'Gagal memperbarui buku. readPage dilarang lebih besar dari pageCount',
     });
     response.code(400);
     return response;
