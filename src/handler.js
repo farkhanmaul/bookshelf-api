@@ -186,7 +186,7 @@ const deletebookByIdHandler = (request, h) => {
     books.splice(index, 1);
     const response = h.response({
       status: 'success',
-      message: 'Buku berhasil dihapus',
+      message: 'Buku berhasil dihapus dari database',
     });
     response.code(200);
     return response;
